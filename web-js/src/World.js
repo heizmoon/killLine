@@ -19,9 +19,9 @@ export class World {
         };
 
         this.textures = {
-            city: loadTex('env_city_night_pixel_1769172471960.png'),
-            sewer: loadTex('env_sewer_wall_pixel_1769172495452.png'),
-            factory: loadTex('env_city_night_pixel_1769172471960.png') // Reuse city or generic for now if factory texture missing, or use sewer
+            city: loadTex('assets/env_city_night_pixel_1769172471960.png'),
+            sewer: loadTex('assets/env_sewer_wall_pixel_1769172495452.png'),
+            factory: loadTex('assets/env_city_night_pixel_1769172471960.png') // Reuse city or generic for now if factory texture missing, or use sewer
         };
 
         // Materials

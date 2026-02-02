@@ -34,7 +34,7 @@ export class PlayerManager {
             width: '600px',
             height: '400px',
             pointerEvents: 'none',
-            backgroundImage: `url('fps_hands_empty_pixel_1769173027916.png')`, // Default empty
+            backgroundImage: `url('assets/fps_hands_empty_pixel_1769173027916.png')`, // Default empty
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom center',
@@ -92,9 +92,9 @@ export class PlayerManager {
         this.equipment.rightHand = itemId;
         // Switch Sprite
         let url = '';
-        if (itemId === 'empty') url = 'fps_hands_empty_pixel_1769173027916.png';
-        if (itemId === 'lighter') url = 'fps_hand_lighter_pixel_1769173047441.png';
-        if (itemId === 'sword') url = 'fps_hand_sword_pixel_1769172404856.png'; // Using generated one
+        if (itemId === 'empty') url = 'assets/fps_hands_empty_pixel_1769173027916.png';
+        if (itemId === 'lighter') url = 'assets/fps_hand_lighter_pixel_1769173047441.png';
+        if (itemId === 'sword') url = 'assets/fps_hand_sword_pixel_1769172404856.png'; // Using generated one
 
         if (url) {
             this.handContainer.style.backgroundImage = `url('${url}')`;

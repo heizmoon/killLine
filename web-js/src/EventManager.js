@@ -8,7 +8,7 @@ export class EventManager {
             {
                 id: 'beggar_kid_squitch',
                 title: '盯着汉堡的小孩',
-                image: 'enemy_halloween_kid_pixel_1769172423750.png',
+                image: 'assets/enemy_halloween_kid_pixel_1769172423750.png',
                 description: '一个面黄肌瘦的小孩，并没有说“Trick or Treat”。他的双眼布满红血丝，死死盯着你外卖袋里溢出的油脂气味。“给...给我...”',
                 choices: [
                     {
@@ -61,14 +61,14 @@ export class EventManager {
                 type: 'combat_trigger',
                 title: '脂肪山 (The Fatberg)',
                 description: '下水道堵塞了。那是一团巨大的、由油脂和垃圾构成的“史莱姆”。仔细看，油脂里包裹着无数人类的毛发、指甲和碎骨——那是上游工厂排出的“废料”。',
-                image: 'enemy_slime_pixel_1769176702938.png',
+                image: 'assets/enemy_slime_pixel_1769176702938.png',
                 minVision: 1
             },
             {
                 id: 'sugar_apple_hanging',
                 title: '“糖霜”苹果',
                 description: '屋檐下挂着红色的球体，覆盖着一层白色的“糖霜”。你闻到了一股浓烈的尸臭味。',
-                image: 'item_sugar_apple_true_pixel_1769177211263.png',
+                image: 'assets/item_sugar_apple_true_pixel_1769177211263.png',
                 choices: [
                     {
                         text: '观察“糖霜” (High Vision)',
@@ -90,7 +90,7 @@ export class EventManager {
                 type: 'combat_trigger',
                 title: '尸体高达 (Corpse Gundam)',
                 description: '工业的奇迹，人性的深渊。这台巨大的机甲由成千上万具无人认领的流浪汉尸体拼装而成。它每迈出一步，关节处都会挤压出黑色的尸油。',
-                image: 'enemy_corpse_mech_pixel_1769176726135.png',
+                image: 'assets/enemy_corpse_mech_pixel_1769176726135.png',
                 minVision: 1,
                 isBoss: true
             }
