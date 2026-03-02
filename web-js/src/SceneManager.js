@@ -1,24 +1,5 @@
 export class SceneManager {
     constructor() {
-        this.titleElement = document.createElement('div');
-        Object.assign(this.titleElement.style, {
-            position: 'absolute',
-            top: '40%',
-            left: '0',
-            width: '100%',
-            textAlign: 'center',
-            color: '#fff',
-            fontFamily: "'Courier New', serif",
-            fontSize: '48px',
-            fontWeight: 'bold',
-            textShadow: '0 0 10px #f00',
-            opacity: '0',
-            pointerEvents: 'none',
-            zIndex: '500',
-            transition: 'opacity 2s ease-in-out'
-        });
-        document.body.appendChild(this.titleElement);
-
         this.currentSceneIndex = 0;
         this.sceneNames = [
             "西雅图冷雨夜 (Seattle Rain)",
@@ -28,23 +9,15 @@ export class SceneManager {
         ];
     }
 
-    showTitle(name) {
-        this.titleElement.innerText = name;
-        this.titleElement.style.opacity = '1';
-
-        setTimeout(() => {
-            this.titleElement.style.opacity = '0';
-        }, 4000); // Show for 4s
+    getCurrentSceneName() {
+        return this.sceneNames[this.currentSceneIndex];
     }
 
     nextScene() {
-        this.currentSceneIndex++;
-        if (this.currentSceneIndex < this.sceneNames.length) {
-            this.showTitle(this.sceneNames[this.currentSceneIndex]);
+        if (this.currentSceneIndex < this.sceneNames.length - 1) {
+            this.currentSceneIndex++;
+            return true;
         }
-    }
-
-    start() {
-        this.showTitle(this.sceneNames[0]);
+        return false;
     }
 }

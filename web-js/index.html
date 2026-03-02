@@ -3,50 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CITY OF SEVERANCE - 都市斩杀线</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Import Three.js Map (Simple way for prototype) -->
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-            }
-        }
-    </script>
+    <!-- Import Phaser 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
 </head>
 
 <body>
     <div id="game-container"></div>
-
-    <!-- UI Overlay -->
-    <div id="ui-layer">
-        <!-- Crosshair removed -->
-        <div id="hud-stats">
-            <div class="stat-bar" id="hp-bar-container">
-                <div class="bar-fill" id="hp-bar"></div>
-                <span class="label">HP</span>
-            </div>
-            <div class="stat-bar" id="sanity-bar-container">
-                <div class="bar-fill" id="sanity-bar"></div>
-                <span class="label">SANITY</span>
-            </div>
-            <div class="stat-bar" id="vision-bar-container">
-                <div class="bar-fill" id="vision-bar"></div>
-                <span class="label">VISION</span>
-            </div>
-        </div>
-        <div id="vision-overlay"></div>
-        <div id="message-log"></div>
-        <div id="start-screen">
-            <h1>URBAN SEVERANCE</h1>
-            <p>都市斩杀线</p>
-            <p>Click to Start / 点击开始</p>
-            <p class="controls">F: Spirit Vision | Click: Interact/Attack</p>
-        </div>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.1.10/dist/tweakpane.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/phaser-plugin-inspector@2.0.0/dist/phaser-plugin-inspector.umd.js"></script>
     <script type="module" src="src/main.js"></script>
 </body>
 

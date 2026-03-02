@@ -1,9 +1,6 @@
-import * as THREE from 'three';
-
 export class PlayerManager {
-    constructor(scene) {
-        this.scene = scene;
-
+    constructor(sceneEvents) {
+        this.sceneEvents = sceneEvents;
         // Base Stats
         this.baseMaxHp = 100;
         this.hp = 100;
@@ -18,30 +15,6 @@ export class PlayerManager {
         this.equipment = {
             rightHand: 'empty', // 'empty', 'lighter', 'sword'
         };
-
-        // DOM Elements for Hands
-        this.initHandVisuals();
-    }
-
-    initHandVisuals() {
-        this.handContainer = document.createElement('div');
-        this.handContainer.id = 'player-hands';
-        Object.assign(this.handContainer.style, {
-            position: 'absolute',
-            bottom: '0',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '600px',
-            height: '400px',
-            pointerEvents: 'none',
-            backgroundImage: `url('assets/fps_hands_empty_pixel_1769173027916.png')`, // Default empty
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'bottom center',
-            transition: 'transform 0.1s linear', // For bobbing
-            zIndex: '1000'
-        });
-        document.body.appendChild(this.handContainer);
     }
 
     // --- Stats Calculation ---
@@ -90,22 +63,10 @@ export class PlayerManager {
 
     equip(itemId) {
         this.equipment.rightHand = itemId;
-        // Switch Sprite
-        let url = '';
-        if (itemId === 'empty') url = 'assets/fps_hands_empty_pixel_1769173027916.png';
-        if (itemId === 'lighter') url = 'assets/fps_hand_lighter_pixel_1769173047441.png';
-        if (itemId === 'sword') url = 'assets/fps_hand_sword_pixel_1769172404856.png'; // Using generated one
-
-        if (url) {
-            this.handContainer.style.backgroundImage = `url('${url}')`;
+        if (this.sceneEvents) {
+            this.sceneEvents.emit('EQUIPMENT_CHANGED', itemId);
         }
     }
 
-    // --- Visuals ---
-    updateHandBob(walkTime) {
-        // Simple Sine wave for breathing/walking
-        const y = Math.sin(walkTime * 10) * 10;
-        const x = Math.cos(walkTime * 5) * 5;
-        this.handContainer.style.transform = `translateX(-50%) translate(${x}px, ${y}px)`;
-    }
+
 }

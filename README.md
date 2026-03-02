@@ -42,4 +42,3 @@ killLine/
 2. 参考 [Unity 迁移与配置指南](unity/UnityMigrationGuide.md) 进行场景与脚本挂载。
 
 ---
-*本项目作为“温泉玩法增强 (Hot Spring Gameplay Enhancement)”迭代的一部分进行开发。*
